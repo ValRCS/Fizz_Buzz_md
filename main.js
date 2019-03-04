@@ -20,7 +20,12 @@ function main() {
         } else {
             childdivs[i].className += 'mygreen';
         }
-
+        childdivs[i].addEventListener('mouseover', handleDivs);
+        childdivs[i].addEventListener('mouseout', handleDivsLeave);
+        childdivs[i].divstate = {
+            myclassName: childdivs[i].className,
+            extraProp: 'some more state'
+        }
     }
 }
 
@@ -30,4 +35,19 @@ function myAlert() {
 }
 function myAlert2() {
     console.log("Called myAlert2");
+}
+
+function handleDivs(ev) {
+    console.log("Handling Divs");
+    console.log(JSON.stringify(ev.target.style.backgroundColor));
+    // ev.target.style.background = 'pink';
+    ev.target.className = 'mypurple';
+}
+
+function handleDivsLeave(ev) {
+    console.log("Handling Divs Leave");
+    console.log(JSON.stringify(ev.target.style.backgroundColor));
+    // ev.target.style.background = '';
+    ev.target.className = ev.target.divstate.myclassName;
+
 }
