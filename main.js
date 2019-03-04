@@ -2,6 +2,15 @@ window.onload = main;
 
 // You can add more functions here 
 function main() {
+    const mainstate = {
+        mprop1: "mainpropertyvalue1",
+        mprop2: [1, 2, 3, 56, 6]
+    }
+
+    const myAlert = () => {
+        console.log("some Alert");
+    }
+
     console.log("Started Main");
     let mybut = document.getElementById('but1');
     // mybut.onclick = myAlert;
@@ -27,27 +36,36 @@ function main() {
             extraProp: 'some more state'
         }
     }
+
+    function myAlert2() {
+        console.log("Called myAlert2");
+        console.log("MainSTATE" + JSON.stringify(this.mainstate));
+    }
+
+    function handleDivs(ev) {
+        console.log(ev.target.tagName);
+        if (ev.target.tagName !== 'DIV') {
+            console.log("Target is not Div! " + ev.target);
+            return;
+        }
+        console.log("Handling Divs");
+        console.log(JSON.stringify(ev.target.style.backgroundColor));
+        // ev.target.style.background = 'pink';
+        ev.target.className = 'mypurple';
+    }
+
+    function handleDivsLeave(ev) {
+        console.log(ev.target.tagName);
+        if (ev.target.tagName !== 'DIV') {
+            console.log("Target is not Div! " + ev.target);
+            return;
+        }
+        console.log("Handling Divs Leave");
+        console.log(JSON.stringify(ev.target.style.backgroundColor));
+        // ev.target.style.background = '';
+        ev.target.className = ev.target.divstate.myclassName;
+
+    }
 }
 
-function myAlert() {
-    // alert("Called my alert function");
-    console.log("Called myAlert ONE");
-}
-function myAlert2() {
-    console.log("Called myAlert2");
-}
 
-function handleDivs(ev) {
-    console.log("Handling Divs");
-    console.log(JSON.stringify(ev.target.style.backgroundColor));
-    // ev.target.style.background = 'pink';
-    ev.target.className = 'mypurple';
-}
-
-function handleDivsLeave(ev) {
-    console.log("Handling Divs Leave");
-    console.log(JSON.stringify(ev.target.style.backgroundColor));
-    // ev.target.style.background = '';
-    ev.target.className = ev.target.divstate.myclassName;
-
-}
