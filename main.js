@@ -9,6 +9,7 @@ const appState = {
     buzzId: "buzzId",
     submitId: "submitArgs",
     clearId: "clearContent",
+    headerId: "header2",
     ogContent: "<h2>Original Content</h2>",
     rootEl: {},
     args: {
@@ -44,6 +45,11 @@ const appState = {
     },
     handleChange: (ev) => {
         console.log("Current value is: " + parseInt(document.getElementById(appState.endId).value));
+        document.getElementById(appState.fizzId).value = document.getElementById(appState.endId).value;
+        document.getElementById(appState.headerId).innerText = `My value is ${document.getElementById(appState.endId).value}`;
+    },
+    handleMouseUp: (ev) => {
+        console.log("Value on MouseUp is: " + parseInt(document.getElementById(appState.endId).value));
     },
     initializeState: function () {
         console.log("Initialize State");
@@ -51,8 +57,19 @@ const appState = {
         document.getElementById(this.submitId).onclick = this.handleSubmit;
         document.getElementById(this.clearId).onclick = this.handleClear;
         document.getElementById(this.endId).oninput = this.handleChange;
-
-
+        document.getElementById(this.endId).onmouseup = this.handleMouseUp;
+        // $("#slider-range").slider();
+        $("#slider-range").slider({
+            range: true,
+            min: 0,
+            max: 500,
+            values: [75, 300],
+            slide: function (event, ui) {
+                $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+            }
+        });
+        $("#amount").val("$" + $("#slider-range").slider("values", 0) +
+            " - $" + $("#slider-range").slider("values", 1))
     },
     delayedAlert: function () {
         console.log('Set Delayed Alert');

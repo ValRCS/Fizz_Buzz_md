@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fizz Buzz homework</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="main.js" defer></script>
 </head>
 
@@ -15,9 +18,12 @@
     <!-- <input id="but1" value="Click me" onclick="myAlert()" type="button"> -->
     <main>
         <input id="startVal" type="text" placeholder="1">
+        <input type="range" id="endVal" name="endingVal" min="1" max="200">
+        <label for="endingVal">endVal</label>
         <input id="endVal" type="text" placeholder="100">
         <input id="fizzVal" type="text" placeholder="3">
         <input id="buzzVal" type="text" placeholder="5">
+        <div id="slider-range"></div>
         <button id="clearContent">
             Clear Content
         </button>
@@ -25,7 +31,11 @@
             Submit All Arguments
         </button>
         <div id="contentbox">
-            <h2>Divs go below this</h2>
+            <h2 id="header2">Divs go below this</h2>
+            <p>
+                <label for="amount">Price range:</label>
+                <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+            </p>
         </div>
     </main>
 
