@@ -17,8 +17,10 @@ const appState = {
         fizz: 3,
         buzz: 5
     },
+    timeoutId: 0,
     handleSubmit: function (ev) {
         console.log("Handling Submit");
+        appState.delayedAlert();
         // console.log("Old endVal is" + appState.endVal);
         appState.args.beg = parseInt(document.getElementById(appState.begId).value);
         appState.args.end = parseInt(document.getElementById(appState.endId).value);
@@ -40,11 +42,24 @@ const appState = {
         document.getElementById(appState.contentId).innerHTML = appState.ogContent;
 
     },
+    handleChange: (ev) => {
+        console.log("Current value is: " + parseInt(document.getElementById(appState.endId).value));
+    },
     initializeState: function () {
         console.log("Initialize State");
         this.rootEl = document.getElementById(this.contentId);
         document.getElementById(this.submitId).onclick = this.handleSubmit;
         document.getElementById(this.clearId).onclick = this.handleClear;
+        document.getElementById(this.endId).oninput = this.handleChange;
+
+
+    },
+    delayedAlert: function () {
+        console.log('Set Delayed Alert');
+        appState.timeoutID = window.setTimeout(appState.fireAlert, 2000, 'That was really slow!');
+    },
+    fireAlert: function (myarg) {
+        window.alert("Fired!" + myarg);
     }
 }
 
