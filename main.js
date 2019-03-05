@@ -17,6 +17,9 @@ function main() {
     mybut.addEventListener('click', myAlert);
     mybut.addEventListener('click', myAlert2);
 
+    $("p#mypar").html("New Paragraph text");
+    // $("div > div").html("New div text");
+
     const mydiv = document.getElementById('mydiv');
     mydiv.style.backgroundColor = 'grey';
     //alert('hello started');
