@@ -1,5 +1,7 @@
 window.onload = main;
 
+
+
 const appState = {
 
     contentId: "contentbox",
@@ -58,18 +60,6 @@ const appState = {
         document.getElementById(this.clearId).onclick = this.handleClear;
         document.getElementById(this.endId).oninput = this.handleChange;
         document.getElementById(this.endId).onmouseup = this.handleMouseUp;
-        // $("#slider-range").slider();
-        $("#slider-range").slider({
-            range: true,
-            min: 0,
-            max: 500,
-            values: [75, 300],
-            slide: function (event, ui) {
-                $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
-            }
-        });
-        $("#amount").val("$" + $("#slider-range").slider("values", 0) +
-            " - $" + $("#slider-range").slider("values", 1))
     },
     delayedAlert: function () {
         console.log('Set Delayed Alert');
