@@ -20,5 +20,13 @@ CSS you can make as fancy or plain as you want, each div should be fixed height 
 BUT should respond to resizing browser window (for example 1 column 100 rows on small mobile, 5x20 on tablet, and 10x10 on large HD screen).
 
 BONUS:
-Afterward we will work on adding custom controls and listeners to generate arbitrary number of boxes and dividers(for example 5 and 7 instead of 3 and 5)
+
+Add 4 Controls (TextBoxes, Sliders, etc) to control:
+* Starting Value(default = 1)
+* Ending Value (default = 100)
+* Fizz Value (default = 3)
+* Buzz Value (default = 5)
+
+* Add Control(button) to Clear All the generated Divs!
+* Add Control(button) to Generate Divs (based on the 4 controls ABOVE)
 
