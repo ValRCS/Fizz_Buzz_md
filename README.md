@@ -14,7 +14,7 @@ Template for Fizz Buzz assignment
 1. id number(1 to 100) divides evenly with 3 and 5 (15,30, etc) : "FizzBuzz"
 2. id number(1 to 100) divides evenly with 3 ONLY (3,6,9) : "Fizz"
 3. id number(1 to 100) divides evenly with 5 ONLY (5,10) : "Buzz"
-4. id number(1 to 100) does not divide with 3 nor 5 (for example 4,7 etc) : 4,7 etc
+4. id number(1 to 100) does not divide with 3 nor 5 (for example 4,7 etc) : 4,7 etc any number
 
 CSS you can make as fancy or plain as you want, each div should be fixed height and width 
 BUT should respond to resizing browser window (for example 1 column 100 rows on small mobile, 5x20 on tablet, and 10x10 on large HD screen).
